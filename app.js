@@ -324,22 +324,8 @@ $charForm.addEventListener("submit", (e) => {
 $charForm.addEventListener("change", () => {
 	const data = new FormData($charForm);
 	const perso = data.get("cls");
-	if (perso == "child") {
-		$previewArt.innerHTML = SVG_CHARS.child;
-		$previewClass.textContent = CLASS_LABELS.child;
-	} else if (perso == "robber") {
-		$previewArt.innerHTML = SVG_CHARS.robber;
-		$previewClass.textContent = CLASS_LABELS.robber;
-	} else if (perso == "rog") {
-		$previewArt.innerHTML = SVG_CHARS.rog;
-		$previewClass.textContent = CLASS_LABELS.rog;
-	} else if (perso == "mage") {
-		$previewArt.innerHTML = SVG_CHARS.mage;
-		$previewClass.textContent = CLASS_LABELS.mage;
-	} else if (perso == "warrior") {
-		$previewArt.innerHTML = SVG_CHARS.warrior;
-		$previewClass.textContent = CLASS_LABELS.warrior;
-	}
+	$previewArt.innerHTML = SVG_CHARS[perso];
+	$previewClass.textContent = CLASS_LABELS[perso];
 });
 
 $inputName.addEventListener("input", () => {
@@ -358,22 +344,8 @@ function cancel_btn() {
 }
 
 function apearcard(perso, name, str, life) {
-	if (perso == "child") {
-		$cardArt.innerHTML = SVG_CHARS.child;
-		$cardClass.textContent = CLASS_LABELS.child;
-	} else if (perso == "robber") {
-		$cardArt.innerHTML = SVG_CHARS.robber;
-		$cardClass.textContent = CLASS_LABELS.robber;
-	} else if (perso == "rog") {
-		$cardArt.innerHTML = SVG_CHARS.rog;
-		$cardClass.textContent = CLASS_LABELS.rog;
-	} else if (perso == "mage") {
-		$cardArt.innerHTML = SVG_CHARS.mage;
-		$cardClass.textContent = CLASS_LABELS.mage;
-	} else if (perso == "warrior") {
-		$cardArt.innerHTML = SVG_CHARS.warrior;
-		$cardClass.textContent = CLASS_LABELS.warrior;
-	}
+	$cardArt.innerHTML = SVG_CHARS[perso];
+	$cardClass.textContent = CLASS_LABELS[perso];
 	if (name == "") {
 		$cardName.textContent = "Herro";
 	} else {
