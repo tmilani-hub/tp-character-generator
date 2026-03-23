@@ -283,7 +283,6 @@ const $btnClose = document.querySelector("#btnClose");
 const $cardArt = document.querySelector("#cardArt");
 const $cardStr = document.querySelector("#cardStr");
 const $lifeVal = document.querySelector("#lifeVal");
-const $Create = document.querySelector("#Create");
 const $strVal = document.querySelector("#strVal");
 const $dialog = document.querySelector("dialog");
 
@@ -318,7 +317,7 @@ $charForm.addEventListener("submit", (e) => {
 	const str = data.get("str");
 	const life = data.get("life");
 	apearcard(perso, name, str, life);
-	$Create.classList.add("none");
+	$btnCreate.remove();
 });
 
 $charForm.addEventListener("change", () => {
@@ -330,7 +329,7 @@ $charForm.addEventListener("change", () => {
 
 $inputName.addEventListener("input", () => {
 	if ($inputName.value.length === 0) {
-		$previewName.textContent = "Herro";
+		$previewName.textContent = "Hero";
 	} else {
 		$previewName.textContent = $inputName.value;
 	}
@@ -347,7 +346,7 @@ function apearcard(perso, name, str, life) {
 	$cardArt.innerHTML = SVG_CHARS[perso];
 	$cardClass.textContent = CLASS_LABELS[perso];
 	if (name == "") {
-		$cardName.textContent = "Herro";
+		$cardName.textContent = "Hero";
 	} else {
 		$cardName.textContent = name;
 	}

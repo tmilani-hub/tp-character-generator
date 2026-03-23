@@ -18,18 +18,6 @@
 	color: white;
 }
 
-#Create {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 1rem;
-}
-
-.none {
-	display: none !important;
-}
-
 body {
 	background: var(--bg);
 	background-image:
