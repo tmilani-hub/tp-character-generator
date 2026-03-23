@@ -1,0 +1,52 @@
+<svg viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+    <linearGradient id="chShirt" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#60a5fa"/>
+        <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    </defs>
+    <!-- legs -->
+    <rect x="46" y="116" width="12" height="32" rx="5" fill="#d97706"/>
+    <rect x="62" y="116" width="12" height="32" rx="5" fill="#d97706"/>
+    <!-- shoes -->
+    <ellipse cx="52" cy="149" rx="10" ry="6" fill="#1e3a5f"/>
+    <ellipse cx="68" cy="149" rx="10" ry="6" fill="#1e3a5f"/>
+    <!-- shorts -->
+    <rect x="40" y="108" width="40" height="18" rx="6" fill="#d97706"/>
+    <!-- body / shirt -->
+    <rect x="38" y="74" width="44" height="40" rx="10" fill="url(#chShirt)"/>
+    <!-- shirt star -->
+    <text x="50" y="100" font-size="18" fill="#fde68a">★</text>
+    <!-- left arm -->
+    <rect x="24" y="76" width="15" height="26" rx="6" fill="url(#chShirt)"/>
+    <!-- right arm -->
+    <rect x="81" y="76" width="15" height="26" rx="6" fill="url(#chShirt)"/>
+    <!-- hands -->
+    <circle cx="31" cy="105" r="6" fill="#fde3b4"/>
+    <circle cx="89" cy="105" r="6" fill="#fde3b4"/>
+    <!-- neck -->
+    <rect x="54" y="62" width="12" height="14" rx="5" fill="#fde3b4"/>
+    <!-- big round head -->
+    <circle cx="60" cy="44" r="28" fill="#fde3b4"/>
+    <!-- rosy cheeks -->
+    <circle cx="40" cy="52" r="7" fill="#f9a8a8" opacity=".5"/>
+    <circle cx="80" cy="52" r="7" fill="#f9a8a8" opacity=".5"/>
+    <!-- eyes big + shiny -->
+    <ellipse cx="51" cy="42" rx="7" ry="7" fill="#fff"/>
+    <ellipse cx="69" cy="42" rx="7" ry="7" fill="#fff"/>
+    <circle cx="52" cy="43" r="4.5" fill="#3b82f6"/>
+    <circle cx="70" cy="43" r="4.5" fill="#3b82f6"/>
+    <circle cx="51" cy="42" r="2" fill="#1e3a5f"/>
+    <circle cx="69" cy="42" r="2" fill="#1e3a5f"/>
+    <circle cx="53" cy="40" r="1.2" fill="#fff"/>
+    <circle cx="71" cy="40" r="1.2" fill="#fff"/>
+    <!-- smile -->
+    <path d="M50 56 Q60 64 70 56" stroke="#c07040" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- hair with cow-lick -->
+    <path d="M32 35 Q36 14 60 16 Q84 14 88 35 Q80 20 60 20 Q40 20 32 35 Z" fill="#92400e"/>
+    <path d="M60 16 Q65 6 70 14" stroke="#78350f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- item: lollipop in hand -->
+    <rect x="88" y="86" width="3" height="22" rx="1" fill="#d97706"/>
+    <circle cx="89" cy="84" r="7" fill="#f43f5e"/>
+    <circle cx="89" cy="84" r="4" fill="#fbbf24" opacity=".7"/>
+</svg>

@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Character Generator</title>
+	</head>
+	<body>
+		<div id="Create">
+			<h1>⚔ Character Generator</h1>
+			<p class="subtitle">Forge your legend</p>
+			<button type="button" id="btnCreate">✦ Create Character</button>
+		</div>
+
+		<!-- Result card -->
+		<div id="characterCard">
+			<div class="card-art" id="cardArt"></div>
+			<div class="card-name" id="cardName"></div>
+			<div class="card-class" id="cardClass"></div>
+			<div class="card-stats">
+				<div class="card-stat">
+					<span class="card-stat-icon">⚔️</span>
+					<span class="card-stat-val" id="cardStr"></span>
+					<span class="card-stat-lbl">Strength</span>
+				</div>
+				<div class="card-stat">
+					<span class="card-stat-icon">❤️</span>
+					<span class="card-stat-val" id="cardLife"></span>
+					<span class="card-stat-lbl">Life</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal overlay -->
+		<div class="overlay" id="overlay">
+			<dialog aria-modal="true" aria-label="Character customization">
+				<div class="dialog">
+					<!-- Live preview -->
+					<aside class="preview-panel">
+						<span class="preview-label">Live preview</span>
+						<div class="character-display" id="previewArt">
+							<svg viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+								<defs>
+									<linearGradient id="wArmor" x1="0" y1="0" x2="0" y2="1">
+										<stop offset="0%" stop-color="#8a9bb0" />
+										<stop offset="100%" stop-color="#4a5a70" />
+									</linearGradient>
+									<linearGradient id="wHelm" x1="0" y1="0" x2="0" y2="1">
+										<stop offset="0%" stop-color="#b0bec5" />
+										<stop offset="100%" stop-color="#607d8b" />
+									</linearGradient>
+								</defs>
+								<!-- legs -->
+								<rect
+									x="42"
+									y="112"
+									width="16"
+									height="34"
+									rx="4"
+									fill="#4a5a70"
+								/>
+								<rect
+									x="62"
+									y="112"
+									width="16"
+									height="34"
+									rx="4"
+									fill="#4a5a70"
+								/>
+								<!-- boots -->
+								<rect
+									x="40"
+									y="136"
+									width="20"
+									height="10"
+									rx="3"
+									fill="#2c3e50"
+								/>
+								<rect
+									x="60"
+									y="136"
+									width="20"
+									height="10"
+									rx="3"
+									fill="#2c3e50"
+								/>
+								<!-- body / breastplate -->
+								<rect
+									x="36"
+									y="68"
+									width="48"
+									height="50"
+									rx="8"
+									fill="url(#wArmor)"
+								/>
+								<rect
+									x="44"
+									y="74"
+									width="32"
+									height="38"
+									rx="4"
+									fill="#5d7a8a"
+									opacity=".6"
+								/>
+								<!-- plate lines -->
+								<line
+									x1="36"
+									y1="90"
+									x2="84"
+									y2="90"
+									stroke="#3a4f60"
+									stroke-width="1.5"
+								/>
+								<line
+									x1="36"
+									y1="105"
+									x2="84"
+									y2="105"
+									stroke="#3a4f60"
+									stroke-width="1.5"
+								/>
+								<!-- left arm + shield -->
+								<rect
+									x="16"
+									y="70"
+									width="22"
+									height="38"
+									rx="6"
+									fill="url(#wArmor)"
+								/>
+								<!-- shield -->
+								<path d="M6 74 L24 70 L24 102 Q15 112 6 104 Z" fill="#c0392b" />
+								<path
+									d="M10 80 L20 77 L20 100 Q14 107 10 103 Z"
+									fill="#e74c3c"
+									opacity=".5"
+								/>
+								<line
+									x1="15"
+									y1="71"
+									x2="15"
+									y2="109"
+									stroke="#922b21"
+									stroke-width="2"
+								/>
+								<line
+									x1="6"
+									y1="90"
+									x2="24"
+									y2="90"
+									stroke="#922b21"
+									stroke-width="2"
+								/>
+								<!-- right arm + sword -->
+								<rect
+									x="82"
+									y="70"
+									width="22"
+									height="38"
+									rx="6"
+									fill="url(#wArmor)"
+								/>
+								<!-- sword -->
+								<rect
+									x="101"
+									y="28"
+									width="6"
+									height="60"
+									rx="2"
+									fill="#cfd8dc"
+								/>
+								<rect
+									x="96"
+									y="66"
+									width="16"
+									height="5"
+									rx="2"
+									fill="#f5c842"
+								/>
+								<rect
+									x="102"
+									y="86"
+									width="5"
+									height="10"
+									rx="2"
+									fill="#8d6e63"
+								/>
+								<!-- neck -->
+								<rect
+									x="53"
+									y="60"
+									width="14"
+									height="12"
+									rx="4"
+									fill="#f0c085"
+								/>
+								<!-- head -->
+								<ellipse cx="60" cy="50" rx="22" ry="20" fill="#f0c085" />
+								<!-- helmet -->
+								<path
+									d="M38 50 Q38 28 60 26 Q82 28 82 50 L78 50 Q76 36 60 34 Q44 36 42 50 Z"
+									fill="url(#wHelm)"
+								/>
+								<rect
+									x="38"
+									y="46"
+									width="44"
+									height="8"
+									rx="2"
+									fill="#90a4ae"
+								/>
+								<!-- visor slit -->
+								<rect
+									x="46"
+									y="50"
+									width="28"
+									height="5"
+									rx="2"
+									fill="#1a237e"
+									opacity=".7"
+								/>
+								<!-- beard -->
+								<ellipse
+									cx="60"
+									cy="65"
+									rx="12"
+									ry="5"
+									fill="#8d6e63"
+									opacity=".5"
+								/>
+							</svg>
+						</div>
+						<div class="preview-name" id="previewName">Hero</div>
+						<div class="preview-class-badge" id="previewClass">Warrior</div>
+						<div class="preview-stats">
+							<div class="stat-pill">
+								<span>⚔️</span><span id="previewStr">50</span>
+							</div>
+							<div class="stat-pill">
+								<span>❤️</span><span id="previewLife">100</span>
+							</div>
+						</div>
+					</aside>
+
+					<!-- Form -->
+					<div class="form-panel">
+						<div class="form-header">
+							<h2>Customize Character</h2>
+							<button
+								type="button"
+								class="btn-close"
+								id="btnClose"
+								aria-label="Close"
+							>
+								✕
+							</button>
+						</div>
+
+						<form id="charForm" novalidate>
+							<!-- Name -->
+							<div class="form-group">
+								<label for="inputName">🏷️ Name</label>
+								<input
+									type="text"
+									name="inputName"
+									id="inputName"
+									placeholder="Enter your hero's name…"
+									maxlength="30"
+									autocomplete="off"
+								/>
+							</div>
+
+							<!-- Class -->
+							<div class="form-group">
+								<label>🎭 Class</label>
+								<div class="class-grid">
+									<input
+										type="radio"
+										name="cls"
+										id="cls-warrior"
+										value="warrior"
+										class="class-option"
+										checked
+									/>
+									<label class="class-label" for="cls-warrior"
+										><span class="class-icon">🛡️</span>Warrior</label
+									>
+
+									<input
+										type="radio"
+										name="cls"
+										id="cls-mage"
+										value="mage"
+										class="class-option"
+									/>
+									<label class="class-label" for="cls-mage"
+										><span class="class-icon">🔮</span>Mage</label
+									>
+
+									<input
+										type="radio"
+										name="cls"
+										id="cls-rog"
+										value="rog"
+										class="class-option"
+									/>
+									<label class="class-label" for="cls-rog"
+										><span class="class-icon">🗡️</span>Rog</label
+									>
+
+									<input
+										type="radio"
+										name="cls"
+										id="cls-robber"
+										value="robber"
+										class="class-option"
+									/>
+									<label class="class-label" for="cls-robber"
+										><span class="class-icon">💰</span>Robber</label
+									>
+
+									<input
+										type="radio"
+										name="cls"
+										id="cls-child"
+										value="child"
+										class="class-option"
+									/>
+									<label class="class-label" for="cls-child"
+										><span class="class-icon">⭐</span>Child</label
+									>
+								</div>
+							</div>
+
+							<!-- Strength -->
+							<div class="form-group">
+								<label for="inputStr">⚔️ Strength</label>
+								<div class="range-row">
+									<input
+										name="str"
+										type="range"
+										class="str-range"
+										id="inputStr"
+										min="1"
+										max="100"
+										value="50"
+									/>
+									<span class="range-val" id="strVal">50</span>
+								</div>
+							</div>
+
+							<!-- Life -->
+							<div class="form-group">
+								<label for="inputLife">❤️ Life Points</label>
+								<div class="range-row">
+									<input
+										name="life"
+										type="range"
+										class="life-range"
+										id="inputLife"
+										min="1"
+										max="200"
+										value="100"
+									/>
+									<span class="range-val" id="lifeVal">100</span>
+								</div>
+							</div>
+
+							<div class="form-actions">
+								<button type="button" class="btn-cancel" id="btnCancel">
+									Cancel
+								</button>
+								<button type="submit" class="btn-confirm">
+									✦ Forge Character
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</dialog>
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>

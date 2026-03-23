@@ -1,0 +1,54 @@
+<svg viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+    <radialGradient id="orb" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#a78bfa"/>
+        <stop offset="100%" stop-color="#6d28d9"/>
+    </radialGradient>
+    <linearGradient id="robe" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#4c1d95"/>
+        <stop offset="100%" stop-color="#2e1065"/>
+    </linearGradient>
+    </defs>
+    <!-- staff -->
+    <rect x="90" y="36" width="5" height="108" rx="2" fill="#8d6e63"/>
+    <circle cx="92" cy="32" r="10" fill="url(#orb)" opacity=".9"/>
+    <circle cx="92" cy="32" r="6" fill="#c4b5fd"/>
+    <!-- robe -->
+    <path d="M38 80 Q32 100 28 150 L92 150 Q88 100 82 80 Z" fill="url(#robe)"/>
+    <!-- robe trim -->
+    <path d="M28 150 L38 100 L82 100 L92 150 Z" fill="#3b0764" opacity=".6"/>
+    <line x1="60" y1="100" x2="60" y2="150" stroke="#7c3aed" stroke-width="1.5" opacity=".5"/>
+    <!-- star pattern on robe -->
+    <text x="48" y="130" font-size="14" fill="#a78bfa" opacity=".5">✦</text>
+    <text x="64" y="115" font-size="10" fill="#a78bfa" opacity=".4">✦</text>
+    <!-- body upper -->
+    <rect x="40" y="70" width="40" height="20" rx="6" fill="#5b21b6"/>
+    <!-- left arm holding staff -->
+    <rect x="80" y="72" width="14" height="30" rx="5" fill="#5b21b6"/>
+    <!-- right arm -->
+    <rect x="26" y="72" width="14" height="28" rx="5" fill="#5b21b6"/>
+    <!-- hand -->
+    <ellipse cx="33" cy="101" rx="6" ry="5" fill="#f0c085"/>
+    <!-- neck -->
+    <rect x="54" y="60" width="12" height="14" rx="4" fill="#f0c085"/>
+    <!-- head -->
+    <ellipse cx="60" cy="50" rx="18" ry="19" fill="#f0c085"/>
+    <!-- long beard / hair hint -->
+    <ellipse cx="60" cy="68" rx="10" ry="4" fill="#dba040" opacity=".4"/>
+    <!-- eyes -->
+    <ellipse cx="53" cy="48" rx="4" ry="4" fill="#fff"/>
+    <ellipse cx="67" cy="48" rx="4" ry="4" fill="#fff"/>
+    <circle cx="54" cy="49" r="2.5" fill="#6d28d9"/>
+    <circle cx="68" cy="49" r="2.5" fill="#6d28d9"/>
+    <!-- glow pupils -->
+    <circle cx="54" cy="49" r="1" fill="#c4b5fd"/>
+    <circle cx="68" cy="49" r="1" fill="#c4b5fd"/>
+    <!-- pointed hat -->
+    <path d="M60 0 L82 48 L38 48 Z" fill="#3b0764"/>
+    <rect x="34" y="44" width="52" height="8" rx="3" fill="#4c1d95"/>
+    <!-- hat star -->
+    <text x="52" y="32" font-size="14" fill="#f5c842">✦</text>
+    <!-- cloak -->
+    <path d="M26 80 Q18 110 22 148 L38 148 Q30 110 40 80 Z" fill="#3b0764" opacity=".7"/>
+    <path d="M94 80 Q102 110 98 148 L82 148 Q90 110 80 80 Z" fill="#3b0764" opacity=".7"/>
+</svg>
